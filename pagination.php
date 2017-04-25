@@ -2,7 +2,7 @@
 
 /**
  * Pagination
- * @Copyright (c) 2017 Hironori Onuma
+ * @copyright (c) 2017 Hironori Onuma
  * @license The MIT License
  */
 class Pagination
