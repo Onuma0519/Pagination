@@ -15,13 +15,13 @@ class Pagination
 
 	protected $_omission_last_link = null;
 
-	protected $_first_button = false;
+	protected $_first_button = true;
 
-	protected $_prev_button = false;
+	protected $_prev_button = true;
 
-	protected $_next_button = false;
+	protected $_next_button = true;
 
-	protected $_last_button = false;
+	protected $_last_button = true;
 
 	protected $_max_before_link = 3;
 
@@ -39,7 +39,7 @@ class Pagination
 
 	protected $_template = array(
 		'wrapper'           => '<ul class="pagination">{pagination}</ul>',
-		'current'           => '<li>{current_page}</li>',
+		'current'           => '<li class="current">{current_page}</li>',
 		'link'              => '<li><a href="{uri}">{page}</a></li>',
 		'before_omission'   => '<li class="omission">...</li>',
 		'after_omission'    => '<li class="omission">...</li>',
@@ -131,7 +131,6 @@ class Pagination
 						$tmp = $prevActive ? $this->_template['first'] : $this->_template['first-inactive'];
 						$no  = 1;
 						$uri = $this->joinUrl($base_url, $this->_key_name, $no, $op_amp);
-						var_dump($prevActive);
 					}
 					break;
 				case 'previous':
