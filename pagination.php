@@ -143,7 +143,6 @@ class Pagination
 					}
 					break;
 				case 'link':
-					// 現在のページ以前のリンク
 					$page_start = $this->_current_page - $this->_max_before_link;
 					if ($this->_omission_first_link)
 					{
@@ -178,7 +177,6 @@ class Pagination
 						$html .= $tmp;
 					}
 
-					// 現在のページリンク
 					$uri = $this->joinUrl($base_url, $this->_key_name, $this->_current_page, $op_amp);
 					$tmp = $this->_template['current'];
 					$tmp = str_replace('{current_page}', $this->_current_page, $tmp);
@@ -186,7 +184,6 @@ class Pagination
 					$html .= $tmp;
 					$tmp = '';
 
-					// 現在のページ以降のリンク
 					$page_count = ($this->_current_page + $this->_max_next_link);
 					$page_count > $max_page_number and $page_count = $max_page_number;
 					if ($this->_omission_last_link)
